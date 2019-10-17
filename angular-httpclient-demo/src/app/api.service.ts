@@ -12,7 +12,7 @@ export class ApiService {
   }
 
 public getStudents(){
-  return this.httpClient.get(`http://localhost:8000`);
+  return this.httpClient.get(`/api`);
 }
 
   constructor(private httpClient: HttpClient) { }
