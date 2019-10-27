@@ -18,4 +18,12 @@ export class ApiService {
     // console.log(body);
     return this.httpClient.post('/api', {firstName: student.firstName, lastName: student.lastName}); 
   }
+
+  public updateStudent(student: Student){
+    return this.httpClient.put('/api', student);
+  }
+
+  public deleteStudent(id: number){
+    return this.httpClient.delete('/api/${id}');
+  }
 }
