@@ -13,7 +13,9 @@ export class ApiService {
   constructor(private httpClient: HttpClient) { }
 
   public postStudent(student: Student){
-    const body = {firstName: student.firstName, lastName: student.lastName, id: student.id};
-    return this.httpClient.post('/api', body); 
+    // const body = {firstName: student.firstName, lastName: student.lastName};
+    // , id: student.id};
+    // console.log(body);
+    return this.httpClient.post('/api', {firstName: student.firstName, lastName: student.lastName}); 
   }
 }

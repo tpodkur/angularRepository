@@ -17,8 +17,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 
+import {MatCardModule} from '@angular/material/card';
+import { MyCardComponent } from './my-card/my-card.component';
+
 @NgModule({
-  declarations: [AppComponent, StudentsComponent, StudentEditorComponent, MyNavComponent],
+  declarations: [AppComponent, StudentsComponent, StudentEditorComponent, MyNavComponent, MyCardComponent],
   entryComponents: [],
 
   imports: [
@@ -34,6 +37,8 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+
+    MatCardModule,
   ],
   
   providers: [],

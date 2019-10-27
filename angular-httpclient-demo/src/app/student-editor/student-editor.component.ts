@@ -19,6 +19,6 @@ export class StudentEditorComponent {
   onSubmit() {
     const student : Student = this.studentForm.value;
     console.log(student);
-    this.apiService.postStudent(student);
+    this.apiService.postStudent(student).subscribe();
   }
 }
