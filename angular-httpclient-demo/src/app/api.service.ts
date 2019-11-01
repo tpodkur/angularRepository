@@ -7,10 +7,11 @@ import { Student } from './student'
 })
 export class ApiService {
 
+  constructor(private httpClient: HttpClient) { }
+
   public getStudents(){
     return this.httpClient.get(`/api`);
   }
-  constructor(private httpClient: HttpClient) { }
 
   public postStudent(student: Student){
     // const body = {firstName: student.firstName, lastName: student.lastName};
@@ -24,6 +25,6 @@ export class ApiService {
   }
 
   public deleteStudent(id: number){
-    return this.httpClient.delete('/api/${id}');
+    return this.httpClient.delete(`/api/${id}`);
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Student } from '../student';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-students',
@@ -19,15 +20,20 @@ export class StudentsComponent implements OnInit {
     });
   }
 
-  // onSubmitDelete(id : number) {
-  //   console.log(id);
-  //   this.apiService.deleteStudent(id).subscribe();
-  // }
+  onDelete(id : number) {
+    //console.log(id);
+    this.apiService.deleteStudent(id).subscribe();
+  }
 
-  // onSubmitDelete() {
-  //   id : number = 1;
-  //   console.log(1);
-  //   this.apiService.deleteStudent(1).subscribe();
-  // }
+  onUpdate(student : Student) {
+    console.log(student);
+    this.apiService.updateStudent(student).subscribe();
+  }
+
+  refresh(): void {
+    console.log("refresh");
+    window.location.reload();
+  }
+  
 }
 
