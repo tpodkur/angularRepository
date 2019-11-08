@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { StudentComponent } from './student/student.component';
 import { Student } from '../student';
-import { Observable } from 'rxjs';
+import { Observable, from } from 'rxjs';
 
 @Component({
   selector: 'app-students',
@@ -21,11 +22,11 @@ export class StudentsComponent implements OnInit {
   }
 
   onDelete(id : number) {
-    //console.log(id);
+    console.log(id);
     this.apiService.deleteStudent(id).subscribe();
   }
 
-  onUpdate(student : Student) {
+  onUpdate(student : StudentComponent) {
     console.log(student);
     this.apiService.updateStudent(student).subscribe();
   }

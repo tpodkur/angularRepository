@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ApiService } from '../api.service';
-import { Student } from '../student';
+//import { Student } from '../student';
+import { StudentComponent } from 'src/app/students/student/student.component';
 
 @Component({
   selector: 'app-student-editor',
@@ -14,11 +15,18 @@ export class StudentEditorComponent {
     lastName: new FormControl(''),
   });
 
+  students;
+
   constructor(private apiService: ApiService) { }
 
   onSubmit() {
-    const student : Student = this.studentForm.value;
+    const student : StudentComponent = this.studentForm.value;
     //console.log(student);
     this.apiService.postStudent(student).subscribe();
+  }
+
+  refresh(): void {
+    console.log("refresh");
+    window.location.reload();
   }
 }

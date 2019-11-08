@@ -19,9 +19,10 @@ import { MatListModule } from '@angular/material/list';
 
 import {MatCardModule} from '@angular/material/card';
 import { MyCardComponent } from './my-card/my-card.component';
+import { StudentComponent } from './students/student/student.component';
 
 @NgModule({
-  declarations: [AppComponent, StudentsComponent, StudentEditorComponent, MyNavComponent, MyCardComponent],
+  declarations: [AppComponent, StudentsComponent, StudentEditorComponent, MyNavComponent, MyCardComponent, StudentComponent],
   entryComponents: [],
 
   imports: [
